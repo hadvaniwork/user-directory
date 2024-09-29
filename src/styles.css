@@ -1,0 +1,155 @@
+.app-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: "Roboto", sans-serif;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+  font-weight: 300;
+  letter-spacing: 1.5px;
+}
+
+.search-bar {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  padding: 15px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  margin-bottom: 30px;
+  font-size: 16px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.search-bar:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 3px 6px rgba(0, 123, 255, 0.3);
+}
+
+.user-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.user-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  width: calc(100% / 3 - 40px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  text-align: left;
+}
+
+.user-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+}
+
+.user-item h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.user-item p {
+  margin: 5px 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.modal-content {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 40px;
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.4s ease;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #999;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  transition: color 0.3s ease;
+}
+
+.close-button:hover {
+  color: #000;
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.modal-content p {
+  font-size: 16px;
+  margin: 10px 0;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .search-bar {
+    width: 90%;
+    padding: 12px;
+    margin: 0 auto 20px auto;
+    font-size: 14px;
+  }
+  .user-item {
+    width: calc(100% / 2 - 40px);
+  }
+}
+
+@media (max-width: 500px) {
+  .user-item {
+    width: 100%;
+  }
+
+  .modal-content {
+    padding: 20px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
